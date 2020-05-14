@@ -5,6 +5,7 @@ import Header from './components/header'
 import ImgContainer from './components/imgContainer'
 
 function App() {
+  const [startDate, setStartDate] = useState(new Date())
   const [podObj, setPodObj] = useState({})
   useEffect(() => {
 
@@ -16,13 +17,17 @@ function App() {
       debugger
     })
   }, [])
-
+  
   return (
     <>
-    <Header title = {podObj.title} date = {podObj.date} />
+    <Header startDate = {startDate} setPodObj = {setPodObj} setStartDate={setStartDate}title = {podObj.title} date = {podObj.date} />
     <ImgContainer url = {podObj.url} explanation = {podObj.explanation} title = {podObj.title} />
     </>
   );
 }
 
 export default App;
+
+/*
+
+ */
